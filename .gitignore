@@ -11,7 +11,8 @@
 target/
 
 #eclipse ignore
-.settings/
+.settings/git push
+
 .project
 .classpath
 
