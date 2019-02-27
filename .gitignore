@@ -33,3 +33,7 @@ target/
 #system ignore
 .DS_Store
 Thumbs.db
+
+#前端
+/src/main/webapp/mmall
+/src/main/webapp/admin
