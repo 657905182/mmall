@@ -33,7 +33,7 @@
     delete from mmall_order
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mmall.pojo.Order" >
+  <insert id="insert" parameterType="com.mmall.pojo.Order" keyProperty="id">
     insert into mmall_order (id, order_no, user_id, 
       shipping_id, payment, payment_type, 
       postage, status, payment_time, 
@@ -198,4 +198,34 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByUserIdAndOrderNo" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_order
+    where order_no = #{orderNo}
+    and user_id = #{userId}
+  </select>
+
+  <select id="selectByOrderNo" parameterType="long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_order
+    where order_no = #{orderNo}
+  </select>
+
+
+  <select id="selectByUserId" parameterType="int" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List"/>
+      from mmall_order
+      where user_id = #{userId}
+  </select>
+
+  <select id="selectAllOrder" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from mmall_order
+    order by create_time desc
+</select>
 </mapper>
