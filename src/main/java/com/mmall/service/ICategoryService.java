@@ -20,4 +20,8 @@ public interface ICategoryService {
     ServerResponse<List<Category>> getChildrenParalleCategory(Integer categoryId);
 
     ServerResponse<List<Integer>> selectCategoryAndChildrenById(Integer categoryId);
+
+    //CategoryVo listCatogory(Integer categoryId);
+
+    ServerResponse getCategory(Integer categoryId);
 }
