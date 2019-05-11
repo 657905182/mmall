@@ -186,7 +186,7 @@ public class Const {
 
         String CATEGORY_LIST = "CATEGORY_LIST of ";
         //host
-        String REDIS_HOST = "192.168.1.14";
+        String REDIS_HOST = "192.*.*.*";
         //port
         int REDIS_PORT = 6379;
     }
